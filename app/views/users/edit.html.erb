@@ -1,0 +1,11 @@
+<section id="main" class="edit-user">
+  <h2>Edit Profile</h2>
+  <%= form_for @user, :html => { :class => "std-form" }  do |f| %>
+    <%= render 'shared/error_messages', :object => f.object %>
+    <%= render 'fields', :f => f %>
+    <div class="submit-action">
+      <%= f.submit "Edit Profile", :class => "std-button" %>
+    </div>
+  <% end %>
+</section>
+

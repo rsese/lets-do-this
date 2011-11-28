@@ -1,0 +1,28 @@
+<section id="main" class="edit-task">
+  <h2>Edit <%= "#{User.find(@task.assigned_to_id).first_name}'s" %> Task</h2>
+  <div class="task-meta">
+    Assigned by <span class="task-meta-assigned-by"><%= User.find(@task.created_by_id).first_name %></span> on <span class="task-meta-assigned-on"><%= @task.created_at.strftime("%B %e, %Y at %I:%M %p") %></span>
+  </div>
+  <%= form_for @task, :html => { :class => "std-form" }  do |f| %>
+    <%= render 'shared/error_messages', :object => f.object %>
+    <%= hidden_field_tag :old_assigned_to_id, @task.assigned_to_id %>
+    <div class="field">
+      <%= f.label :assigned_to, "Actually, give this to: ", :class => "select-label" %>
+      <%= f.select(:assigned_to_id, @user_names_ids) %>
+    </div>
+
+    <div class="field">
+      <% if @task.description.length > 60 %>
+        <%= f.text_area :description, { :rows => 4, :class => "text-input" }  %>
+      <% else %>
+        <%= f.text_field :description, { :class => "text-input" }  %>
+      <% end %>
+    </div>
+    <div class="submit-action">
+      <%= f.submit "Update", :class => "std-button" %>
+    </div>
+  <% end %>
+</section>
+
+
+<% content_for :body_class do %> id="edit-task"<% end %>

@@ -1,0 +1,13 @@
+<% if object.errors.any? %>
+  <div class="error">
+    <h2>Sign up problem - there were
+      <%= pluralize(object.errors.count, "error") %> error in the form you
+      filled out.</h2>
+    <p>There were problems with the following fields:</p>
+    <ul>
+    <% object.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li> 
+    <% end %>
+    </ul>
+  </div>
+<% end %>

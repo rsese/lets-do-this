@@ -1,0 +1,494 @@
+/*
+ R E S E T
+ --------------------------*/ 
+
+
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol, ul {
+  list-style: none;
+}
+blockquote, q {
+  quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+
+/*
+ B A S I C  S T U F F
+ ***/
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 95%;
+  line-height: 1.5;
+}
+
+h1, h2, h3, h4, h5 {
+  margin: 0px;
+}
+
+h1 {
+  font-size: 160%
+}
+
+h2 {
+  font-size: 140%
+}
+
+h3 {
+  font-size: 130%
+}
+
+h4 {
+  font-size: 120%
+}
+
+h5 {
+  font-size: 110%
+}
+
+a, a:visited {
+  border-bottom: 1px dashed #000;
+  color: #666;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+a:hover {
+  border-bottom: none;
+  text-decoration: none;
+}
+
+.container {
+  width: 960px;
+  margin: 0 auto;
+}
+
+header {
+  border-bottom: 8px solid #000;
+  float: left;
+  margin-bottom: 20px;
+  padding: 10px 0px 10px;
+  width: 960px;
+}
+
+header .logo {
+  float: left;
+}
+
+header .logo a,
+header .logo a:visited {
+  border-bottom: none;
+  color: #000;
+  display: block;
+  font-size: 32px;
+  text-decoration: none;
+}
+
+header nav {
+  float: right;
+  font-size: 18px;
+}
+
+header nav li {
+  float: left;
+  margin-bottom: 0px;
+  margin-left: 9px;
+  padding: 4px 8px;
+}
+
+header nav li a,
+header nav li a:visited {
+  border-bottom: none;
+  color: #000;
+  text-decoration: none;
+}
+
+.content {
+  float: left;
+  padding: 0px 0px 10px 0px;
+  width: 100%;
+}
+
+.content h2 {
+  margin-bottom: 10px;
+}
+
+.content p {
+  margin-bottom: 10px;
+}
+
+#edit-task .content h2 {
+  margin-bottom: 0px;
+}
+
+footer {
+  clear: both;
+  border-top: 1px dashed #000;
+  padding: 10px 0px;
+  font-size: 85%;
+  font-style: italic;
+}
+
+label {
+  display: block;
+  margin: 2px 0px 2px 0px;
+  padding: 4px 0px 0px;
+}
+
+input {
+  margin: 0px 0px 8px 0px;
+}
+
+.field {
+  margin-bottom: 8px;
+}
+
+.field_with_errors label {
+  color: #F33;
+}
+
+.field_with_errors input {
+  border: 1px solid #F33;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0px;
+}
+
+li {
+  margin: 0px 0px 5px 0px;
+  padding: 0px;
+}
+
+#main {
+  float: left;
+}
+
+.col-1 #main {
+  width: 940px;
+}
+
+.edit-user, .users, .signup, .edit-task, .new-task {
+  width: 880px;
+  /*padding-left: 80px;*/
+}
+
+.col-2 #main {
+  width: 700px;
+}
+
+.col-2 #secondary {
+  width: 220px;
+}
+
+#profile-header {
+  border-bottom: 2px solid #444;
+  float: left;
+  margin-bottom: 15px;
+  padding-bottom: 10px;
+  width: 100%;
+}
+
+.profile h2 {
+  float: left;
+  width: 620px;
+}
+
+.profile .meta {
+  color: #888;
+  float: right;
+  width: 300px;
+}
+
+.profile .meta span {
+  display: inline-block;
+  width: 80px;
+}
+
+.user-tasks,
+.user-tasks-medium,
+.user-tasks-long {
+  border-top: 4px solid #000;
+  float: left;
+  margin: 10px 20px 10px 0px;
+  padding: 8px 0px;
+}
+
+.user-tasks {
+  width: 470px;
+}
+
+.user-tasks-long {
+  width: 760px;
+}
+
+.user-tasks-medium {
+  width: 620px;
+}
+
+.user-tasks h3 a:link, .user-tasks h3 a:visited {
+  border-bottom: 1px dashed #000;
+  font-weight: normal;
+  text-decoration: none;
+}
+
+.last {
+  margin-right: 0px;
+}
+
+.task-list {
+  border-bottom: 1px solid #000;
+  border-top: 1px solid #000;
+  float: left;
+  margin-bottom: 10px;
+  padding: 5px 0px 0px 0px;
+}
+
+.user-tasks h3 a,
+.user-tasks h3 a:visited {
+  color: #000;
+}
+
+.user-tasks h3,
+.user-tasks-medium h3,
+.user-tasks-long h3 {
+  font-weight: normal;
+  margin-bottom: 10px;
+}
+
+.user-tasks .task,
+.user-tasks-medium .task,
+.user-tasks-long .task {
+  /* background-color: #96BC33; */
+  background-color: #557118;
+  float: left;
+  padding: 8px 0px;
+  width: 100%;
+}
+
+.user-tasks .task:nth-child(odd),
+.user-tasks-medium .task:nth-child(odd),
+.user-tasks-long .task:nth-child(odd) {
+  background-color: #557118;
+}
+
+.user-tasks .no-tasks,
+.user-tasks-medium .no-tasks,
+.user-tasks-long .no-tasks {
+  background-color: #557118;
+  color: #fff;
+  float: left;
+  padding: 8px;
+}
+
+.user-tasks .no-tasks {
+  width: 454px;
+}
+
+.user-tasks-long .no-tasks {
+  width: 744px;
+}
+
+.user-tasks-medium .no-tasks {
+  width: 620px;
+}
+
+.handle {
+  color: #fff;
+  font-weight: bold;
+  float: left;
+  width: 10px;
+  padding: 0px 8px;
+  cursor: move;
+}
+
+.task {
+  clear: both;
+}
+
+.task-description,
+.task-description-medium,
+.task-description-solo,
+.task-description-long {
+  color: #fff;
+  float: left;
+  width: 378px;
+}
+
+.task-description {
+  width: 378px;
+}
+
+.task-description-long {
+  width: 668px;
+}
+
+.task-description-medium {
+  width: 500px;
+}
+
+.task-description-solo {
+  padding: 0px 10px;
+  width: 448px;
+}
+
+.task-functions {
+  color: #fff;
+  float: left;
+  width: 50px;
+  padding: 0px 8px;
+  text-align: right;
+}
+
+.task-list .task-functions a:link,
+.task-list .task-functions a:visited {
+  border-bottom: none;
+  color: #fff;
+  text-decoration: none;
+}
+
+.std-button {
+  background-color: #E5E5E5;
+  border: none;
+  display: inline;
+  font-size: 80%;
+  font-weight: bold;
+  padding: 2px 4px;
+  text-transform: uppercase;
+  width: auto;
+}
+
+.std-button a,
+.std-button a:visited {
+  border-bottom: none;
+  color: #000;
+  text-decoration: none;
+}
+
+.flash {
+  font-style: italic;
+  font-weight: bold;
+  margin-bottom: 10px;
+  padding: 8px;
+  width: 220px;
+}
+
+.notice {
+  background-color: #FDB92A;
+  color: #fff;
+}
+
+.error {
+  background-color: #F33;
+  color: #fff;
+}
+
+.success {
+  background-color: #eee;
+}
+
+.bump-2 {
+  padding-left: 160px;
+}
+
+.std-form {
+  float: left;
+  margin: 8px 20px 10px 0px;
+  padding: 4px 0px;
+  width: 470px;
+}
+
+.submit-action {
+  float: right;
+  margin-top: 8px;
+}
+
+.text-input {
+  /* border: 2px solid #77992B; */
+  color: #000;
+  margin-bottom: 10px;
+  padding: 2px 0px 4px 0px;
+  width: 454px;
+}
+
+.task-meta {
+  font-size: 90%;
+  color: #808080;
+}
+
+.select-label {
+  display: inline;
+}
+
+.task-list a:link, .task-list a:hover, .task-list a:visited {
+  border-bottom: 1px dashed #fff;
+  color: #fff;
+}
+
+.task .inline-edit textarea {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.blurb {
+  color: #555;
+  font-size: 100%;
+  width: 860px;
+}
+
+.blurb p {
+  margin-bottom: 15px;
+}
+
+.task-no, .more {
+  font-size: 140%;
+  color: #aaa;
+  border-right: 2px solid #bbb;
+  padding: 8px;
+}
+
+.last {
+  border-right: none;
+}
+

@@ -1,0 +1,15 @@
+    <section class="user-tasks <%= cycle("first", "last") %>">
+      <h3 id="<%= "#{user.last_name}-#{user.id.to_s}" %>"><%= link_to name(user), user_path(user) %></h3>
+      <ul id="<%= user.id %>" class="task-list">
+      <% if user.assigned_tasks.empty? %>
+        <li class="no-tasks">Hmmmmm...nothing to do.  Check out <%= link_to 'Wikipedia?', 'http://en.wikipedia.org' %></li>
+      <% end %>
+      <% user.assigned_tasks.each do |task| %>
+        <li id="task_<%= task.id %>" class="task">
+          <span class="task-description-solo" id="<%= task.id %>"><%= task.description %></span>
+        </li>
+      <% end %>
+      </ul>
+
+      </section>
+

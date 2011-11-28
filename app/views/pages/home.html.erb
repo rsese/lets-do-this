@@ -1,0 +1,77 @@
+<% if signed_in? %>
+  <section id="main">
+    <h2>Stuff We're Doing Now</h2>
+    <% @users.each do |user| %>
+      <%= render user %>
+    <% end %>
+  </section>
+<% else %>
+  <section id="main">
+    <h2>Oh Hello.  Let's Do This.</h2>
+    <div class="blurb">
+      <p>
+        If you already have an account, please
+        <%= link_to "sign in", signin_path %>, otherwise, you'll need to 
+        <%= link_to "create an account", signup_path %> to start using Let's
+        Do This.  Until then, you can check out what everyone's up to below.
+        Have fun!
+      </p>
+      <p>
+        Love,<br />
+        The Management
+      </p>
+    </div>
+
+    <% @users.each do |user| %>
+      <%= render 'users/not_signed_in_user', :user => user  %>
+    <% end %>
+
+  </section>
+<% end %>
+
+<% content_for :body_class do %>
+ <%= 'class=home' %>
+<% end %>
+
+<% content_for :javascript do %>
+<%= javascript_include_tag "jquery.jeditable" %>
+<%= javascript_tag do %>
+  $(function() {
+    $(".task-list").sortable({
+      handle: '.handle',
+      items: 'li',
+      cursor: 'move',
+      opacity: 0.4,
+      update: function(event, ui) {
+        $.ajax({
+          type: 'POST',
+          data: $(event.target).sortable('serialize') + "&user=" +
+                $(event.target).attr('id'),
+          dataType: 'script',
+          success: function(request) {
+            // Highlight dropped task?
+          },
+          url: '/users/reorder_tasks'
+        })
+      }
+    });
+
+    $('.edit_area').editable('/tasks/remote_edit_tasks', {
+      type: 'textarea',
+      cssclass: 'inline-edit',
+      id: "task_id",
+      name: "task_description",
+      submit: 'save',
+      cancel: 'cancel',
+      callback: function(value, settings) {
+         /*
+         alert(this);
+         alert(value);
+         alert(settings);
+         */
+      }
+    });
+
+  });
+<% end %>
+<% end %>
